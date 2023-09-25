@@ -1,5 +1,6 @@
 body {
     font-family:Helvetica;
+    color: gray;
 }
 
 header {
@@ -8,7 +9,15 @@ header {
     align-items: center;
 }
 
-header > h1 {
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80px;
+}
+
+.title-container > h1 {
     font-weight: bold;
     font-style: italic;
 }
@@ -22,6 +31,27 @@ main {
 main > p {
     text-align: center;
     margin: 20px;
+}
+
+label[for="read-more"] {
+    text-align: center;
+    font-weight: bold;
+    height: 30px;
+    width: 100px;
+    background-color: lightgray;
+    color: white;
+}
+
+#read-more {
+    visibility: hidden;
+}
+
+.read-more-text {
+    display: none;
+}
+
+#read-more:checked + .read-more-text {
+    display: block;
 }
 
 main > a {
@@ -59,4 +89,25 @@ main > ul li > article {
 
 input[type="radio"]:checked + article {
     display: block;
+}
+
+@media screen and (min-width: 400px) {
+    
+    .title-container {
+        top: 0;
+        z-index: 1000;
+        position: fixed;
+    }
+
+    label[for="read-more"] {
+        display: none;
+    }
+
+    .read-more-text {
+        display: block;
+    }
+
+   main > ul > li > article {
+        display: block;
+    }
 }
