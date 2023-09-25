@@ -9,6 +9,10 @@ header {
     align-items: center;
 }
 
+nav {
+    display: none;
+}
+
 .title-container {
     display: flex;
     justify-content: center;
@@ -127,5 +131,21 @@ input[type="radio"]:checked + article {
 
    main > ul > li > article {
         display: block;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    nav {
+        background-color: gray;
+    }
+    
+    main > ul > li > article {
+        display: flex;
+        padding: 10px 50px;
+    }
+
+    main > ul > li > article > img {
+        height: 200px;
+        margin-right: 20px;
     }
 }
